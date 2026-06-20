@@ -48,14 +48,18 @@
 
     const displayItems = () =>{
       let itemList = '';
-      for (let i = 0; i < items.length; i++) {
-        let detail = items[i];
-        itemList += `<li class="list-group-item d-flex justify-content-between align-items-center">
-            ${detail.name} 
-            <span class="badge bg-success rounded">₦${detail.price.toLocaleString()}</span>
+      items.map((item) => {
+          itemList += `<li class="list-group-item d-flex justify-content-between align-items-center">
+            ${item.name} 
+            <span class="badge bg-success rounded">₦${item.price.toLocaleString()}</span>
           </li>`;
-
-        
-      }
+      })
+      // for (let i = 0; i < items.length; i++) {
+      //   let detail = items[i];
+      //   itemList += `<li class="list-group-item d-flex justify-content-between align-items-center">
+      //       ${detail.name} 
+      //       <span class="badge bg-success rounded">₦${detail.price.toLocaleString()}</span>
+      //     </li>`;
+      // }
       document.getElementById('itemList').innerHTML = itemList;
     }
